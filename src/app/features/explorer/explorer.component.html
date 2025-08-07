@@ -1,15 +1,11 @@
 <div id="explorer-container" class="h-full w-62 border-r border-gray-200">
   <div id="explorer-header" class="p-2 border-b border-gray-200 flex">
     <span class="text-xl font-bold text-violet-600 grow">ReQuest</span>
-    <button
-      class="p-0.5 bg-violet-500 rounded-md cursor-pointer hover:bg-violet-700 transition duration-300 flex items-center"
-    >
-      <span class="material-symbols-outlined text-white font-semibold">
-        add
-      </span>
-    </button>
   </div>
   <div id="explorer-searchbar" class="p-2 border-b border-gray-200">
     <app-searchbar />
+  </div>
+  <div class="border-b border-gray-200">
+    <app-collections-list />
   </div>
 </div>

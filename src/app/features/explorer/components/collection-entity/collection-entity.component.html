@@ -1,0 +1,33 @@
+<div>
+  <div
+    id="collection-entity-container"
+    class="w-full p-1.5 flex flex-row items-center gap-2 rounded-sm cursor-pointer hover:bg-gray-200 transition duration-300"
+    (click)="setOpenState()"
+  >
+    <lucide-angular
+      [img]="isOpen() ? ChevronDownIcon : ChevronRightIcon"
+      [size]="16"
+    />
+
+    <div class="flex flex-row, items-center gap-1 grow">
+      <lucide-angular
+        [img]="DatabaseIcon"
+        [size]="16"
+        class="text-violet-500"
+      />
+
+      <span class="text-sm">Collection Name</span>
+    </div>
+
+    <button
+      class="p-1 hover:bg-gray-300 rounded-md cursor-pointer transition duration-300"
+    >
+      <lucide-angular [img]="ElipsisIcon" [size]="16" />
+    </button>
+  </div>
+  @if (isOpen()) {
+  <div class="pl-8">
+    <span class="text-xs">This collection is empty.</span>
+  </div>
+  }
+</div>
