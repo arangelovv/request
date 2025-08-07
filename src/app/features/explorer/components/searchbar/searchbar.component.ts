@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
+import { LucideAngularModule, Search } from 'lucide-angular';
 
 @Component({
   selector: 'app-searchbar',
-  imports: [],
+  imports: [LucideAngularModule],
   templateUrl: './searchbar.component.html',
-  styles: ``
+  styles: ``,
 })
 export class SearchbarComponent {
-
+  readonly SearchIcon = Search;
 }
