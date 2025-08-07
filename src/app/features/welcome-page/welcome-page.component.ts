@@ -7,10 +7,11 @@ import {
   Briefcase,
   Plus,
 } from 'lucide-angular';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-welcome-page',
-  imports: [LucideAngularModule],
+  imports: [LucideAngularModule, RouterLink],
   templateUrl: './welcome-page.component.html',
   styles: ``,
 })
