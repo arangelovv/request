@@ -1,0 +1,64 @@
+<div class="p-8 flex flex-col gap-6 bg-gray-50 h-full">
+  <div class="flex flex-col gap-4">
+    <h1 class="text-center text-3xl font-bold text-violet-600">
+      Welcome to ReQuest
+    </h1>
+    <span class="text-center text-lg text-gray-600"
+      >Open-source API testing tool to streamline your development
+      workflow</span
+    >
+  </div>
+  <div class="flex flex-col gap-4">
+    <div class="flex flex-row gap-2 items-center">
+      <lucide-angular [img]="ZapIcon" class="w-5 h-5 text-violet-500" />
+      <h2 class="text-xl font-bold text-gray-800">Quick Start</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div
+        class="bg-white p-4 flex flex-col gap-2 shadow-sm border border-gray-200 rounded-md"
+      >
+        <lucide-angular [img]="DatabaseIcon" class="w-5 h-5 text-violet-500" />
+        <p class="font-medium text-gray-900">Create a collection</p>
+        <p class="text-sm text-gray-600">
+          Collections help you organize related API requests together
+        </p>
+      </div>
+      <div
+        class="bg-white p-4 flex flex-col gap-2 shadow-sm border border-gray-200 rounded-md"
+      >
+        <lucide-angular [img]="ArrowsIcon" class="w-5 h-5 text-violet-500" />
+        <p class="font-medium text-gray-900">Make a Request</p>
+        <p class="text-sm text-gray-600">
+          Test your APIs with different HTTP methods and parameters
+        </p>
+      </div>
+      <div
+        class="bg-white p-4 flex flex-col gap-2 shadow-sm border border-gray-200 rounded-md"
+      >
+        <lucide-angular [img]="BriefcaseIcon" class="w-5 h-5 text-violet-500" />
+        <p class="font-medium text-gray-900">Organize with Projects</p>
+        <p class="text-sm text-gray-600">
+          Group related collections into projects for better organization
+        </p>
+      </div>
+    </div>
+  </div>
+  <div
+    class="w-full bg-violet-500 rounded-lg px-10 py-4 flex flex-col gap-4 items-center"
+  >
+    <h3 class="text-2xl font-semibold text-white">Ready to get started?</h3>
+    <p class="text-md text-white">
+      Create your first collection and start testing your APIs
+    </p>
+    <button
+      class="bg-white text-violet-600 px-4 py-2 rounded-md flex flex-row gap-2 items-center cursor-pointer hover:bg-gray-100 transition duration-300"
+    >
+      <lucide-angular
+        [img]="PlusIcon"
+        strokeWidth="3"
+        class="w-5 h-5 text-violet-500"
+      />
+      <span class="font-semibold">Create Collection</span>
+    </button>
+  </div>
+</div>
