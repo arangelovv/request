@@ -2,7 +2,7 @@
   <div
     id="collection-entity-container"
     class="w-full p-1.5 flex flex-row items-center gap-2 rounded-sm cursor-pointer hover:bg-gray-200 transition duration-300"
-    (click)="setOpenState()"
+    (click)="this.isOpen.set(!this.isOpen())"
   >
     <lucide-angular
       [img]="isOpen() ? ChevronDownIcon : ChevronRightIcon"
@@ -16,7 +16,7 @@
         class="text-violet-500"
       />
 
-      <span class="text-sm">Collection Name</span>
+      <span class="text-sm">{{ collectionName() }}</span>
     </div>
 
     <button
@@ -25,9 +25,13 @@
       <lucide-angular [img]="ElipsisIcon" [size]="16" />
     </button>
   </div>
-  @if (isOpen()) {
+  @if (isOpen()) { @if (collectionRequests() == undefined) {
   <div class="pl-8">
     <span class="text-xs">This collection is empty.</span>
   </div>
-  }
+  } @else { @for (item of collectionRequests(); track $index) {
+  <div class="pl-8">
+    <span class="text-xs">{{ item.requestName }}</span>
+  </div>
+  } } }
 </div>

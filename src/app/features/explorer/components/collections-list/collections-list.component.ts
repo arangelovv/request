@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CollectionEntityComponent } from '../collection-entity/collection-entity.component';
 import { LucideAngularModule, Plus } from 'lucide-angular';
 import { RouterLink } from '@angular/router';
+import { Collection, exampleEntities } from '../../../../shared/entities';
 
 @Component({
   selector: 'app-collections-list',
@@ -11,4 +12,6 @@ import { RouterLink } from '@angular/router';
 })
 export class CollectionsListComponent {
   readonly PlusIcon = Plus;
+
+  entities: Collection[] = exampleEntities;
 }

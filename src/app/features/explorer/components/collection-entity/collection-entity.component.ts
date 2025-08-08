@@ -1,4 +1,4 @@
-import { Component, signal, WritableSignal } from '@angular/core';
+import { Component, input, Input, signal, WritableSignal } from '@angular/core';
 import {
   LucideAngularModule,
   ChevronRight,
@@ -6,6 +6,7 @@ import {
   Database,
   EllipsisVertical,
 } from 'lucide-angular';
+import { Request } from '../../../../shared/entities';
 
 @Component({
   selector: 'app-collection-entity',
@@ -18,10 +19,8 @@ export class CollectionEntityComponent {
   readonly DatabaseIcon = Database;
   readonly ElipsisIcon = EllipsisVertical;
 
-  isOpen: WritableSignal<boolean> = signal(false);
+  collectionName = input<string>('Collection Name');
+  collectionRequests = input<Request[] | undefined>();
 
-  setOpenState() {
-    this.isOpen.set(!this.isOpen());
-    console.warn(this.isOpen());
-  }
+  isOpen: WritableSignal<boolean> = signal(false);
 }
