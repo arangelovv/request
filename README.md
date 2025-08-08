@@ -1,59 +1,41 @@
-# ReqQuest
+🚀 ReQuest is an open-source web application that streamlines API testing by providing an intuitive platform for managing HTTP requests.
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.15.
+## 🖥️ Technologies
 
-## Development server
+-- **Angular v19** - Framework for building user interfaces
+-- **TypeScript** - For type-safe code
+-- **Tailwind CSS** - A utility-first CSS framework
+-- **Lucide Icons** - Beautiful & consistent icons
 
-To start a local development server, run:
+## 📋 Prerequisites
 
-```bash
-ng serve
-```
+Before you begin, ensure you have the following installed:
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- Node.js (version 18.0.0 or higher)
+- npm (version 8.0.0 or higher)
+- Angular (version 19 or higher)
 
-## Code scaffolding
+## 🛠️ Installation
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+1. Clone the repository:
 
 ```bash
-ng generate --help
+git clone <repository-url>
+cd req-quest
 ```
 
-## Building
-
-To build the project run:
+2. Install frontend dependencies and start the development server:
 
 ```bash
-ng build
+npm install
 ```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
 
 ```bash
-ng test
+npm start
 ```
 
-## Running end-to-end tests
+The application will be available at `http://localhost:4200`
 
-For end-to-end (e2e) testing, run:
+## 👥 Authors
 
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Alexander Rangelov - [Github](https://github.com/arangelovv)
