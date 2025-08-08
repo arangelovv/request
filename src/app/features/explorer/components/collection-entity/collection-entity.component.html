@@ -1,4 +1,4 @@
-<div>
+<div class="flex flex-col gap-1">
   <div
     id="collection-entity-container"
     class="w-full p-1.5 flex flex-row items-center gap-2 rounded-sm cursor-pointer hover:bg-gray-200 transition duration-300"
@@ -25,13 +25,23 @@
       <lucide-angular [img]="ElipsisIcon" [size]="16" />
     </button>
   </div>
-  @if (isOpen()) { @if (collectionRequests() == undefined) {
-  <div class="pl-8">
-    <span class="text-xs">This collection is empty.</span>
+  <div>
+    @if (isOpen()) { @if (collectionRequests() == undefined) {
+    <div class="pl-8">
+      <span class="text-xs">This collection is empty.</span>
+    </div>
+    } @else {
+    <div class="flex flex-col gap-1">
+      @for (item of collectionRequests(); track $index) {
+      <div class="pl-6">
+        <app-request-item
+          [requestName]="item.requestName"
+          [requestType]="item.requestType"
+        />
+      </div>
+      }
+    </div>
+
+    } }
   </div>
-  } @else { @for (item of collectionRequests(); track $index) {
-  <div class="pl-8">
-    <span class="text-xs">{{ item.requestName }}</span>
-  </div>
-  } } }
 </div>

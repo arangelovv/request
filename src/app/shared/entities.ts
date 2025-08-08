@@ -29,8 +29,28 @@ export const exampleEntities: Collection[] = [
     collectionDescription: 'Bullshit, Bullshit, Bullshit, Bullshit',
     collectionRequests: [
       {
-        requestName: 'Get Users',
+        requestName: 'Get all Users',
         requestType: 'GET',
+        requestUrl: 'mock/api/users',
+      },
+      {
+        requestName: 'Get all Users',
+        requestType: 'PUT',
+        requestUrl: 'mock/api/users',
+      },
+      {
+        requestName: 'Get all Users',
+        requestType: 'POST',
+        requestUrl: 'mock/api/users',
+      },
+      {
+        requestName: 'Get all Users',
+        requestType: 'DELETE',
+        requestUrl: 'mock/api/users ',
+      },
+      {
+        requestName: 'Get all Users',
+        requestType: 'PATCH',
         requestUrl: 'mock/api/users',
       },
     ],
