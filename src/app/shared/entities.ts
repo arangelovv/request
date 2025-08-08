@@ -1,6 +1,15 @@
+export type ReqType =
+  | 'GET'
+  | 'POST'
+  | 'PUT'
+  | 'DELETE'
+  | 'PATCH'
+  | 'OPTIONS'
+  | 'HEAD';
+
 export interface Request {
   requestName: string;
-  requestType: string;
+  requestType: ReqType;
   requestUrl: string;
 }
 
