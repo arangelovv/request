@@ -1,1 +1,51 @@
-<p>create-collection-page works!</p>
+<div id="crt-coll-page" class="w-full h-full flex flex-col bg-gray-50">
+  <div id="crt-coll-header" class="w-full border-b-2 border-gray-200">
+    <div id="crt-coll-header-tools" class="flex flex-row items-center p-4">
+      <span class="grow text-lg font-semibold">Create New Collection</span>
+      <div class="flex flex-row items-center gap-2">
+        <button
+          class="flex flex-row items-center gap-1.5 px-2 py-1.5 rounded-md bg-gray-200 text-sm cursor-pointer hover:bg-gray-300 transition duration-300"
+          routerLink=""
+        >
+          <lucide-angular [img]="CancelIcon" [size]="14" />
+          Cancel
+        </button>
+        <button
+          class="flex flex-row items-center gap-1.5 px-2 py-1.5 rounded-md text-white bg-violet-600 text-sm cursor-pointer hover:bg-violet-700 transition duration-300"
+        >
+          <lucide-angular [img]="SaveIcon" [size]="14" />
+          Create collection
+        </button>
+      </div>
+    </div>
+    <div id="crt-coll-header-tabs" class="w-full grow flex flex-row">
+      <button
+        (click)="isActive.set(0)"
+        class="{{ isActive() == 0 ? activeTabStyle : inactiveTabStyle }}"
+      >
+        Basics
+      </button>
+      <button
+        (click)="isActive.set(1)"
+        class="{{ isActive() == 1 ? activeTabStyle : inactiveTabStyle }}"
+      >
+        Enviroment
+      </button>
+      <button
+        (click)="isActive.set(2)"
+        class="{{ isActive() == 2 ? activeTabStyle : inactiveTabStyle }}"
+      >
+        Auth
+      </button>
+      <button
+        (click)="isActive.set(3)"
+        class="{{ isActive() == 3 ? activeTabStyle : inactiveTabStyle }}"
+      >
+        Requests
+      </button>
+    </div>
+  </div>
+  <div id="crt-coll-tab-conents" class="w-full h-full">
+    <ng-container *ngComponentOutlet="renderTabForm()" />
+  </div>
+</div>

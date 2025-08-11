@@ -2,10 +2,10 @@
 
 ## 🖥️ Technologies
 
--- **Angular v19** - Framework for building user interfaces
--- **TypeScript** - For type-safe code
--- **Tailwind CSS** - A utility-first CSS framework
--- **Lucide Icons** - Beautiful & consistent icons
+- **Angular v19** - Framework for building user interfaces
+- **TypeScript** - For type-safe code
+- **Tailwind CSS** - A utility-first CSS framework
+- **Lucide Icons** - Beautiful & consistent icons
 
 ## 📋 Prerequisites
 
