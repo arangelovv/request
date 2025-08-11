@@ -1,11 +1,13 @@
 import { Component, signal } from '@angular/core';
-import { LucideAngularModule, X, Save } from 'lucide-angular';
-import { BasicsFormComponent } from './components/basics-form/basics-form.component';
-import { NgComponentOutlet } from '@angular/common';
-import { EnviromentFormComponent } from './components/enviroment-form/enviroment-form.component';
-import { AuthFormComponent } from './components/auth-form/auth-form.component';
-import { RequestsFormComponent } from './components/requests-form/requests-form.component';
 import { RouterLink } from '@angular/router';
+import { LucideAngularModule, X, Save } from 'lucide-angular';
+import { NgComponentOutlet } from '@angular/common';
+import {
+  BasicsFormComponent,
+  EnviromentFormComponent,
+  AuthFormComponent,
+  RequestsFormComponent,
+} from './components/index';
 
 enum ActiveTab {
   Basics,

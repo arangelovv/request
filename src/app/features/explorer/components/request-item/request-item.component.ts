@@ -1,4 +1,4 @@
-import { Component, computed, input, OnInit } from '@angular/core';
+import { Component, input, OnInit } from '@angular/core';
 import { ReqType } from '../../../../shared/entities';
 
 @Component({
