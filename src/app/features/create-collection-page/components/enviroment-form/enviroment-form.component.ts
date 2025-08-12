@@ -6,12 +6,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-
-interface EnviromentVariable {
-  key: string | undefined;
-  value: string | undefined;
-  description: string | undefined;
-}
+import { EnviromentVariable } from '../../../../shared/entities';
 
 @Component({
   selector: 'app-enviroment-form',
