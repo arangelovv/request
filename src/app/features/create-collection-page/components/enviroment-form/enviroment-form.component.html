@@ -1,1 +1,77 @@
-<p>enviroment-form works!</p>
+<div class="px-6 py-8 w-4/5 flex flex-col gap-6">
+  <div class="flex flex-col gap-1">
+    <span class="text-lg font-medium">Environment Variables </span>
+    <span class="text-sm font-medium text-gray-500">
+      Variables can be used in requests
+    </span>
+  </div>
+  <div class="flex flex-col gap-2">
+    <div
+      id="env-form"
+      class="w-full p-4 border border-gray-300 rounded-md gap-3 flex flex-col"
+    >
+      <span class="text-sm font-semibold">Add Enviroment Variable</span>
+      <div class="flex flex-row items-center gap-2">
+        <form
+          [formGroup]="enviromentForm"
+          class="flex flex-row gap-2 w-full"
+          (ngSubmit)="saveEnviromentVariable()"
+        >
+          <input
+            formControlName="key"
+            type="text"
+            placeholder="Key"
+            class="w-full border rounded-md px-2 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-violet-500 bg-white border-gray-300"
+          />
+          <input
+            formControlName="value"
+            type="text"
+            placeholder="Value"
+            class="w-full border rounded-md px-2 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-violet-500 bg-white border-gray-300"
+          />
+          <input
+            formControlName="description"
+            type="text"
+            placeholder="Description (optional)"
+            class="w-full border rounded-md px-2 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-violet-500 bg-white border-gray-300"
+          />
+          <button
+            type="submit"
+            [disabled]="!enviromentForm.valid"
+            class="flex flex-row items-center gap-1.5 px-2 py-1.5 2-full h-full rounded-md text-white bg-violet-600 text-sm cursor-pointer hover:bg-violet-700 transition duration-300"
+          >
+            <lucide-angular [img]="PlusIcon" strokeWidth="3" size="16" />
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="flex flex-col gap-3">
+    @for (item of enviromentVariables ; track $index) {
+    <div
+      class="flex flex-row gap-2 w-full p-2 border border-gray-300 rounded-md"
+    >
+      <div class="flex flex-col gap-1 w-full">
+        <span class="text-sm font-medium text-gray-700">Key</span>
+        <span class="font-semibold text-sm">{{ item.key }}</span>
+      </div>
+      <div class="flex flex-col gap-1 w-full">
+        <span class="text-sm font-medium text-gray-700">Value</span>
+        <span class="font-semibold text-sm">{{ item.value }}</span>
+      </div>
+      <div class="flex flex-col gap-1 w-full">
+        <span class="text-sm font-medium text-gray-700">Description</span>
+        <span class="font-semibold text-sm">{{
+          item.description ? item.description : "No description available"
+        }}</span>
+      </div>
+      <button
+        (click)="removeEnviromentVariable($index)"
+        class="text-red-600 cursor-pointer hover:text-red-700 transition duration-300"
+      >
+        <lucide-angular [img]="DeleteIcon" strokeWidth="3" size="16" />
+      </button>
+    </div>
+    }
+  </div>
+</div>
