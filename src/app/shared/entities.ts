@@ -4,7 +4,7 @@ export interface EnviromentVariable {
   description: string | undefined;
 }
 
-type AuthType = 'none' | 'basic' | 'bearer';
+export type AuthType = 'none' | 'basic' | 'bearer';
 
 export interface AuthCredentials {
   username?: string;
