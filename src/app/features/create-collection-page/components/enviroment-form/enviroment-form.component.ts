@@ -33,15 +33,20 @@ export class EnviromentFormComponent {
   });
 
   saveEnviromentVariable() {
-    const envVar: EnviromentVariable = {
-      key: this.enviromentForm.value.key,
-      value: this.enviromentForm.value.value,
-      description: this.enviromentForm.value.description,
-    };
-    this.enviromentVariables.push(envVar);
-    this.enviromentForm.reset();
-    console.log('Enviroment Variable Saved:', envVar);
-    console.log('Current Enviroment Variables:', this.enviromentVariables);
+    if (this.enviromentForm.invalid) {
+      console.warn('Form is valid!');
+      const envVar: EnviromentVariable = {
+        key: this.enviromentForm.value.key,
+        value: this.enviromentForm.value.value,
+        description: this.enviromentForm.value.description,
+      };
+      console.log('Enviroment Variable Saved:', envVar);
+      this.enviromentVariables.push(envVar);
+      console.log('Current Enviroment Variables:', this.enviromentVariables);
+      this.enviromentForm.reset();
+    } else {
+      console.warn('Form is invalid, please check the inputs.');
+    }
   }
 
   removeEnviromentVariable(index: number) {

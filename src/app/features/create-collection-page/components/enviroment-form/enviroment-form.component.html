@@ -8,7 +8,7 @@
   <div class="flex flex-col gap-2">
     <div
       id="env-form"
-      class="w-full p-4 border border-gray-300 rounded-md gap-3 flex flex-col"
+      class="w-full p-4 border border-gray-300 rounded-md gap-3 flex flex-col bg-white"
     >
       <span class="text-sm font-semibold">Add Enviroment Variable</span>
       <div class="flex flex-row items-center gap-2">
@@ -67,9 +67,9 @@
       </div>
       <button
         (click)="removeEnviromentVariable($index)"
-        class="text-red-600 cursor-pointer hover:text-red-700 transition duration-300"
+        class="text-gray-400 cursor-pointer hover:text-red-500 transition duration-300"
       >
-        <lucide-angular [img]="DeleteIcon" strokeWidth="3" size="16" />
+        <lucide-angular [img]="DeleteIcon" strokeWidth="2" size="16" />
       </button>
     </div>
     }

@@ -1,1 +1,95 @@
-<p>requests-form works!</p>
+<div class="px-6 py-8 w-2/3 flex flex-col gap-6">
+  <div class="flex flex-col gap-1">
+    <span class="text-lg font-medium">Initial Requests </span>
+    <span class="text-sm font-medium text-gray-500">
+      Add some initial requests to get started with your collection (optional)
+    </span>
+  </div>
+  <div class="flex flex-col gap-2">
+    <div
+      id="env-form"
+      class="w-full p-4 border border-gray-300 rounded-md gap-3 flex flex-col bg-white"
+    >
+      <span class="text-sm font-semibold">Add Requests</span>
+      <div class="flex flex-row items-center gap-2">
+        <form
+          [formGroup]="requestsForm"
+          class="flex flex-row gap-2 w-full items-center"
+          (ngSubmit)="saveRequest()"
+        >
+          <input
+            formControlName="reqName"
+            type="text"
+            placeholder="Request Name"
+            class="w-full border rounded-md px-2 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-violet-500 bg-white border-gray-300"
+          />
+          <select
+            formControlName="reqType"
+            class="w-full bg-white border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-violet-500"
+          >
+            <option value="GET">Get</option>
+            <option value="POST">Post</option>
+            <option value="PUT">Put</option>
+            <option value="DELETE">Delete</option>
+            <option value="PATCH">Patch</option>
+            <option value="OPTIONS">Options</option>
+            <option value="HEAD">Head</option>
+          </select>
+          <input
+            formControlName="reqUrl"
+            type="text"
+            placeholder="URL path (e.g., /api/users)"
+            class="w-full border rounded-md px-2 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-violet-500 bg-white border-gray-300"
+          />
+          <button
+            type="submit"
+            class="flex flex-row items-center gap-1.5 px-2 py-1.5 2-full h-full rounded-md text-white bg-violet-600 text-sm cursor-pointer hover:bg-violet-700 transition duration-300"
+          >
+            <lucide-angular [img]="PlusIcon" strokeWidth="3" size="16" />
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="flex flex-col gap-3">
+    @if (requests.length != 0) { @for (req of requests ; track $index) {
+    <div
+      class="flex flex-row gap-2.5 w-full p-2 border border-gray-300 rounded-md items-center"
+    >
+      <div class="flex flex-col">
+        <span
+          class="uppercase py-0.5 px-1 rounded-sm text-xs font-medium text-gray-700
+          {{
+            req.requestType === 'GET' ? 'bg-emerald-100 text-emerald-800' : ''
+          }}
+          {{
+            req.requestType === 'POST' ? 'bg-violet-100 text-violet-800 ' : ''
+          }}
+          {{ req.requestType === 'PUT' ? 'bg-blue-200 text-blue-800' : '' }}
+          {{ req.requestType === 'DELETE' ? 'bg-red-200 text-red-800' : '' }}
+          {{ req.requestType === 'PATCH' ? 'bg-amber-200 text-amber-200' : '' }}
+          {{ req.requestType === 'OPTIONS' ? 'bg-gray-200 text-gray-800' : '' }}
+          {{ req.requestType === 'HEAD' ? 'bg-cyan-200 text-cyan-800' : '' }}
+          "
+          >{{ req.requestType }}</span
+        >
+      </div>
+      <div class="flex flex-col w-full">
+        <span class="text-sm font-medium">{{ req.requestName }}</span>
+        <span class="text-xs text-gray-500">{{ req.requestUrl }}</span>
+      </div>
+      <button
+        (click)="removeRequest($index)"
+        class="text-gray-400 cursor-pointer hover:text-red-500 transition duration-300"
+      >
+        <lucide-angular [img]="DeleteIcon" strokeWidth="2" size="16" />
+      </button>
+    </div>
+    } } @else {
+    <div class="text-sm text-gray-500">
+      No requests added yet. Add some requests to get started with your
+      collection.
+    </div>
+    }
+  </div>
+</div>
