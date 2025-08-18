@@ -33,7 +33,7 @@ export class EnviromentFormComponent {
   });
 
   saveEnviromentVariable() {
-    if (this.enviromentForm.invalid) {
+    if (this.enviromentForm.valid) {
       console.warn('Form is valid!');
       const envVar: EnviromentVariable = {
         key: this.enviromentForm.value.key,
